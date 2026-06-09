@@ -69,7 +69,14 @@ $$ E(\Delta \theta) = \lVert J\Delta\theta-e \rVert ^2 + \lambda^2 \lVert \Delta
 
 #### Mathematical Derivation
 
-$$\begin{align} E(\Delta \theta) &= \frac{1}{2}(J\Delta\theta-e)^{\mathrm{T}}(J\Delta\theta-e) + \frac{1}{2} \lambda^2\Delta\theta ^{\mathrm{T}}\Delta\theta \\ &=\frac{1}{2}(\Delta\theta ^{\mathrm{T}}J^{\mathrm{T}}J\Delta\theta-\Delta\theta ^{\mathrm{T}}J^{\mathrm{T}}e-e^{\mathrm{T}}J\Delta\theta+e^{\mathrm{T}}e)+\frac{1}{2}\lambda^2\Delta\theta ^{\mathrm{T}}\Delta\theta \\ \\ \frac{ \partial E }{ \partial \Delta\theta } & = J^{\mathrm{T}}J\Delta\theta-J^{\mathrm{T}}e+\lambda^2\Delta\theta = 0 \\ \\ \therefore & (J^{\mathrm{T}}J+\lambda^2I)\Delta\theta = J^{\mathrm{T}}e \\ & \Delta\theta = (J^{\mathrm{T}}J + \lambda^2I)^{-1}J^{\mathrm{T}}e \end{align}$$
+$$
+\begin{align} 
+E(\Delta \theta) &= \frac{1}{2}(J\Delta\theta-e)^{\mathrm{T}}(J\Delta\theta-e) + \frac{1}{2} \lambda^2\Delta\theta ^{\mathrm{T}}\Delta\theta \\ 
+&=\frac{1}{2}(\Delta\theta ^{\mathrm{T}}J^{\mathrm{T}}J\Delta\theta-\Delta\theta ^{\mathrm{T}}J^{\mathrm{T}}e-e^{\mathrm{T}}J\Delta\theta+e^{\mathrm{T}}e)+\frac{1}{2}\lambda^2\Delta\theta ^{\mathrm{T}}\Delta\theta \\ \\ 
+\frac{ \partial E }{ \partial \Delta\theta } & = J^{\mathrm{T}}J\Delta\theta-J^{\mathrm{T}}e+\lambda^2\Delta\theta = 0 \\ \\ 
+\therefore & (J^{\mathrm{T}}J+\lambda^2I)\Delta\theta = J^{\mathrm{T}}e \\ 
+& \Delta\theta = (J^{\mathrm{T}}J + \lambda^2I)^{-1}J^{\mathrm{T}}e \end{align}
+$$
 
 However, in practice, directly inverting the $n \times n$ matrix $(J^{\mathrm{T}}J + \lambda^2I)$ can be computationally expensive (especially for highly redundant manipulators where $n \gg k$).
 
